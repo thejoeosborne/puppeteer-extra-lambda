@@ -9,12 +9,9 @@ phases:
     on-failure: ABORT
     runtime-versions:
       nodejs: 20
-    commands:
-      - echo "Starting build"
   pre_build:
     on-failure: ABORT
     commands:
-      - echo "Pre-Building..."
       - echo "Installing dependencies..."
       - npm install
   build:

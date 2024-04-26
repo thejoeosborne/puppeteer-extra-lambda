@@ -1,4 +1,4 @@
-service: custom-scraping
+service: scraper
 
 provider:
   environment:
@@ -13,6 +13,6 @@ functions:
     memorySize: 256
     timeout: 60
     image:
-      uri: <account-id>.dkr.ecr.<region>.amazonaws.com/custom-scraping:latest
+      uri: <account-id>.dkr.ecr.<region>.amazonaws.com/scraper:latest
       command:
         - dist/index.handler
