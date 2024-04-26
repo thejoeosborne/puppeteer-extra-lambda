@@ -1,0 +1,7 @@
+/node_modules
+/.serverless
+/venv
+/.idea
+/dist
+/.cache
+.DS_Store

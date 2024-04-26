@@ -1,0 +1,24 @@
+version: 0.2
+env:
+  variables:
+    REGION: <region>
+    VERSION: "1"
+
+phases:
+  install:
+    on-failure: ABORT
+    runtime-versions:
+      nodejs: 20
+    commands:
+      - echo "Starting build"
+  pre_build:
+    on-failure: ABORT
+    commands:
+      - echo "Pre-Building..."
+      - echo "Installing dependencies..."
+      - npm install
+  build:
+    on-failure: ABORT
+    commands:
+      - echo "Building..."
+      - $CODEBUILD_SRC_DIR/deploy.sh

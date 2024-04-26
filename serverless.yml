@@ -1,0 +1,18 @@
+service: custom-scraping
+
+provider:
+  environment:
+    ENV: ${self:provider.stage}
+  name: aws
+  region: <region>
+  runtime: nodejs20.x
+  stage: ${opt:stage, "dev"}
+
+functions:
+  test-scraper:
+    memorySize: 256
+    timeout: 60
+    image:
+      uri: <account-id>.dkr.ecr.<region>.amazonaws.com/custom-scraping:latest
+      command:
+        - dist/index.handler
